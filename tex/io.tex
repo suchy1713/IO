@@ -12,13 +12,19 @@
 \setlength{\parindent}{1em}
 \sloppy
 
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\arabic*}
+\setlist[enumerate,2]{label=\theenumi.\arabic*}
+\setlist[enumerate,3]{label=\theenumii.\arabic*}
 
 \title{Inżynieria Oprogramowania - analiza systemu aquaparku}
 \date{2019/20}
 \author{Piotr Wawrzynów \and Wojciech Dolata} 
 
 \begin{document}
- 
+
+\newcommand{\pspec}[4]{#1 \\wejście: #2 \\wyjście: #3 \\działanie: #4}
+
 \maketitle
 \newpage
 
@@ -206,5 +212,155 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
     \label{fig:level2_4_3}
     \end{figure}
     \newpage
+    
+
+\section{PSPEC}
+
+\subsection{Spis procesów}
+\begin{enumerate}
+    \item Założenie konta
+        \begin{enumerate}
+            \item Weryfikacja danych klienta
+                \begin{enumerate}
+                    \item Sprawdzenie poprawności danych osobowych
+                    \item Weryfikacja adresu email
+                    \item Sprawdzenie poprawności danych płatniczych
+                \end{enumerate}
+            \item Zapis danych klienta do bazy
+                \begin{enumerate}
+                    \item Ustalenie typu konta
+                    \item Generowanie raportów
+                \end{enumerate}
+            \item Obsługa płatności za założenie konta
+                \begin{enumerate}
+                    \item Generowanie potwierdzenia płatności
+                \end{enumerate}
+        \end{enumerate}
+    \item Obsługa transakcji
+        \begin{enumerate}
+            \item Wybór rodzaju transakcji
+            \item Identyfikacja klienta
+            \item Pojedynczy bilet
+                \begin{enumerate}
+                    \item Wybór ilości godzin
+                \end{enumerate}
+            \item Karnet
+                \begin{enumerate}
+                    \item Wybór rodzaju karnetu
+                \end{enumerate}
+            \item Nauka pływania
+                \begin{enumerate}
+                    \item Wybór poziomu zaawansowania
+                    \item Przypisanie do grupy
+                \end{enumerate}
+            \item Rezerwacja toru
+                \begin{enumerate}
+                    \item Wybór terminu rezerwacji toru
+                    \item Przypisanie toru do rezerwacji
+                \end{enumerate}
+            \item Obsługa płatności
+                \begin{enumerate}
+                    \item Kalkulacja łącznego kosztu
+                    \item Wybór sposobu płatności
+                    \item Płatność gotówką
+                    \item Płatność kartą
+                \end{enumerate}
+        \end{enumerate}
+    \item Usługi firm zewnętrznych
+        \begin{enumerate}
+            \item Firma sprzątająca
+            \item Firma gastronomiczna
+            \item Firma obsługująca płatności
+            \item Firma ratownicza
+        \end{enumerate}
+    \item Obsługa wynagrodzeń
+        \begin{enumerate}
+            \item Sprawdzanie poprawności faktur
+            \item Wypłacanie należności
+                \begin{enumerate}
+                    \item Dokonywanie przelewu
+                    \item Wypłacanie wynagrodzeń pracownikom
+                \end{enumerate}
+            \item Rozliczanie podatków
+                \begin{enumerate}
+                    \item Płacenie ZUS, itd.
+                    \item Płacenie podatków
+                \end{enumerate}
+        \end{enumerate}
+\end{enumerate}
+
+
+\subsection{Opis procesów}
+\begin{enumerate}
+    \item Założenie konta
+        \begin{enumerate}
+            \item \pspec{Weryfikacja danych klienta}{in}{out}{dupa}
+                \begin{enumerate}
+                    \item Sprawdzenie poprawności danych osobowych
+                    \item Weryfikacja adresu email
+                    \item Sprawdzenie poprawności danych płatniczych
+                \end{enumerate}
+            \item Zapis danych klienta do bazy
+                \begin{enumerate}
+                    \item Ustalenie typu konta
+                    \item Generowanie raportów
+                \end{enumerate}
+            \item Obsługa płatności za założenie konta
+                \begin{enumerate}
+                    \item Generowanie potwierdzenia płatności
+                \end{enumerate}
+        \end{enumerate}
+    \item Obsługa transakcji
+        \begin{enumerate}
+            \item Wybór rodzaju transakcji
+            \item Identyfikacja klienta
+            \item Pojedynczy bilet
+                \begin{enumerate}
+                    \item Wybór ilości godzin
+                \end{enumerate}
+            \item Karnet
+                \begin{enumerate}
+                    \item Wybór rodzaju karnetu
+                \end{enumerate}
+            \item Nauka pływania
+                \begin{enumerate}
+                    \item Wybór poziomu zaawansowania
+                    \item Przypisanie do grupy
+                \end{enumerate}
+            \item Rezerwacja toru
+                \begin{enumerate}
+                    \item Wybór terminu rezerwacji toru
+                    \item Przypisanie toru do rezerwacji
+                \end{enumerate}
+            \item Obsługa płatności
+                \begin{enumerate}
+                    \item Kalkulacja łącznego kosztu
+                    \item Wybór sposobu płatności
+                    \item Płatność gotówką
+                    \item Płatność kartą
+                \end{enumerate}
+        \end{enumerate}
+    \item Usługi firm zewnętrznych
+        \begin{enumerate}
+            \item Firma sprzątająca
+            \item Firma gastronomiczna
+            \item Firma obsługująca płatności
+            \item Firma ratownicza
+        \end{enumerate}
+    \item Obsługa wynagrodzeń
+        \begin{enumerate}
+            \item Sprawdzanie poprawności faktur
+            \item Wypłacanie należności
+                \begin{enumerate}
+                    \item Dokonywanie przelewu
+                    \item Wypłacanie wynagrodzeń pracownikom
+                \end{enumerate}
+            \item Rozliczanie podatków
+                \begin{enumerate}
+                    \item Płacenie ZUS, itd.
+                    \item Płacenie podatków
+                \end{enumerate}
+        \end{enumerate}
+\end{enumerate}
  
 \end{document}
