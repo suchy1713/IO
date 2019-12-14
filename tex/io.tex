@@ -310,34 +310,34 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
                     \item Generowanie potwierdzenia płatności
                 \end{enumerate}
         \end{enumerate}
-    \item Obsługa transakcji
+    \item \pspec{Obsługa transakcji}{Informacje o nowej transakcji, informacja o zmianach cen, informacja o zakończonych zajęciach}{Potwierdzenie finalizacji transakcji, Informacja o zleconych zajęciach, Informacje o zawartych trasakcjach, raport}{Na podstawie danych od klienta proces decyduje o rodzaju transakcji i przeprowadza obsługę płatności}
         \begin{enumerate}
-            \item Wybór rodzaju transakcji
-            \item Identyfikacja klienta
-            \item Pojedynczy bilet
+            \item \pspec{Wybór rodzaju transakcji}{Informacje o transakcji}{Decyzja klienta}{Podjęcie decyzji o rodzaju transakcji na podstawie danych pobranych od klienta.}
+            \item \pspec{Identyfikacja klienta}{Dane osobowe, Informacje o koncie}{Zniżki}{Pobranie danych klienta z bazy danych w celu określenia przysługujących zniżek.}
+            \item \pspec{Pojedynczy bilet}{Decyzja klienta}{Informacje o transakcji}{Obsługa zakupu pojedynczego biletu.}
                 \begin{enumerate}
-                    \item Wybór ilości godzin
+                    \item \pspec{Wybór ilości godzin}{Decyzja klienta}{Informacje o transakcji}{Podjęcie decyzji o czasie ważności biletu na podstawie danych od klienta.}
                 \end{enumerate}
-            \item Karnet
+            \item \pspec{Karnet}{Decyzja klienta}{Informacje o transakcji}{Obsługa zakupu karnetu}
                 \begin{enumerate}
-                    \item Wybór rodzaju karnetu
+                    \item \pspec{Wybór rodzaju karnetu}{Decyzja klienta}{Informacje o transakcji}{Podjęcie decyzji o rodzaju karnetu (dzienny, tygodniowy, miesięczny) na podstawie danych od klienta.}
                 \end{enumerate}
-            \item Nauka pływania
+            \item \pspec{Nauka pływania}{Decyzja klienta}{Informacje o transakcji}{Obsługa zapisu do grupy nauki pływania.}
                 \begin{enumerate}
-                    \item Wybór poziomu zaawansowania
-                    \item Przypisanie do grupy
+                    \item \pspec{Wybór poziomu zaawansowania}{Decyzja klienta}{Poziom zaawansowania}{Podjęcie decyzji o poziomie zaawansowania na podstawie danych od klienta}
+                    \item \pspec{Przypisanie do grupy}{Poziom zaawansowania, Informacja o wolnych miejscach}{Informacje o transakcji, Informacja o zapisie}{Zapisanie klienta do grupy z wolnymi miejscami o odpowiednim poziomie zaawanasowania.}
                 \end{enumerate}
-            \item Rezerwacja toru
+            \item \pspec{Rezerwacja toru}{Decyzja klienta}{Informacje o transakcji}{Obsługa rezerwacji toru}
                 \begin{enumerate}
-                    \item Wybór terminu rezerwacji toru
-                    \item Przypisanie toru do rezerwacji
+                    \item \pspec{Wybór terminu rezerwacji toru}{Decyzja klienta, Informacja o wolnych torach}{Termin, Wybrany tor}{Podjęcie decyzji o terminie i torze do rezerwacji na podstawie danych od klienta i danych o wolnych torach pobranych z bazy}
+                    \item \pspec{Przypisanie toru do rezerwacji}{Wybrany tor}{Informacja o rezerwacji, Informacje o transakcji}{Zapis informacji o rezerwacji do bazy danych}
                 \end{enumerate}
-            \item Obsługa płatności
+            \item \pspec{Obsługa płatności}{Informacje o płatności}{Potwierdzenie płatności, raport}{Proces odpowiadający za obsługę płatności różnymi metodami oraz utworzenie raportów dla księgowego i kierownika}
                 \begin{enumerate}
-                    \item Kalkulacja łącznego kosztu
-                    \item Wybór sposobu płatności
-                    \item Płatność gotówką
-                    \item Płatność kartą
+                    \item \pspec{Kalkulacja łącznego kosztu}{Rodzaj transakcji, zniżki, ceny}{łączny koszt}{Proces obliczający łączny koszt transakcji zależnie od jej rodzaju, aktualnego cennika i zniżek przypadających klientowi.}
+                    \item \pspec{Wybór sposobu płatności}{Decyzja klienta}{Sposób płatności}{Podjęcie decyzji o sposobie płatności na podstawie danych pobranych od klienta}
+                    \item \pspec{Płatność gotówką}{Sposób płatności}{Potwierdzenie płatności, raport}{Obsługa płatności gotówkowej i utworzenie raportów i potwierdzeń płatności}
+                    \item \pspec{Płatność kartą}{Sposób płatności}{Potwierdzenie płatności, raport}{Obsługa płatności kartą i utworzenie raportów i potwierdzeń płatności}
                 \end{enumerate}
         \end{enumerate}
     \item Usługi firm zewnętrznych
