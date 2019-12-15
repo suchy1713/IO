@@ -292,22 +292,22 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
 
 \subsection{Opis procesów}
 \begin{enumerate}
-    \item Założenie konta
+    \item \pspec {Założenie konta} {Informacje o nowym użytkowniku}{Potwierdzenie założenia konta} {Obsługuje cały proces zakładania konta}
         \begin{enumerate}
-            \item \pspec{Weryfikacja danych klienta}{in}{out}{dupa}
+            \item \pspec{ Weryfikacja danych klienta }{Dane klienta}{Dane klienta}{Na podstawie dostarczonych danych decyduje o ich poprawności, w przypadku niepoprawności dostarcza komunikat o błędzie}
                 \begin{enumerate}
-                    \item Sprawdzenie poprawności danych osobowych
-                    \item Weryfikacja adresu email
-                    \item Sprawdzenie poprawności danych płatniczych
+                    \item \pspec{Sprawdzenie poprawności danych osobowych} {Dane osobowe} {Dane osobowe} {Na podstawie dostarczonych danych osobowych decyduje o ich poprawności (np. poprawność numeru pesel), w przypadku niepoprawności dostarcza komunikat o błędzie}
+                    \item \pspec{ Weryfikacja adresu email } {Adres email} {Adres email} {Wysyła maila z kodem rejestracyjnym na podany adres i po wpisaniu tego kodu przez użytkownika przechodzi dalej}
+                    \item \pspec{Sprawdzenie poprawności danych płatniczych} {Informacje płatnicze} {Dane płatnicze} {Na podstawie otrzymanych informacji płatniczych decyduje o ich poprawności, w przypadku niepoprawności dostarcza komunikat o błędzie}
                 \end{enumerate}
-            \item Zapis danych klienta do bazy
+            \item \pspec{ Zapis danych klienta do bazy} {Dane klienta} {Raport} {Dodaje użytkownika o podanych danych do bazy, zgodnie z Generowaniem raportów generuje raporty}
                 \begin{enumerate}
-                    \item Ustalenie typu konta
-                    \item Generowanie raportów
+                    \item \pspec {Ustalenie typu konta}{Dane klienta} {Informacje o typie konta} {W zależności od danych klienta ustala typ konta (np. przyznaje ulgę)}
+                    \item \pspec {Generowanie raportów} {Informacje o klientach} {Raport} {Na podstawie danych o klientach z bazy generuje raport, który zostaje przesłany księgowemu i kierownikowi}
                 \end{enumerate}
-            \item Obsługa płatności za założenie konta
+            \item \pspec {Obsługa płatności za założenie konta}{Dane klienta}{Potwierdzenie założenia konta}{Na podstawie otrzymanych danych firma zewnętrzna dokonuje płatności i wysyła potwierdzenie założenia konta}
                 \begin{enumerate}
-                    \item Generowanie potwierdzenia płatności
+                    \item \pspec {Generowanie potwierdzenia płatności}{Informacja o udanej płatności}{Potwierdzenie płatności}{Na podstawie informacji o udanej płatności wysyła użytkownikowi potwierdzenie płatności (równoznaczne z potwierdzeniem założenia konta}
                 \end{enumerate}
         \end{enumerate}
     \item \pspec{Obsługa transakcji}{Informacje o nowej transakcji, informacja o zmianach cen, informacja o zakończonych zajęciach}{Potwierdzenie finalizacji transakcji, Informacja o zleconych zajęciach, Informacje o zawartych trasakcjach, raport}{Na podstawie danych od klienta proces decyduje o rodzaju transakcji i przeprowadza obsługę płatności}
@@ -340,25 +340,25 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
                     \item \pspec{Płatność kartą}{Sposób płatności}{Potwierdzenie płatności, raport}{Obsługa płatności kartą i utworzenie raportów i potwierdzeń płatności}
                 \end{enumerate}
         \end{enumerate}
-    \item Usługi firm zewnętrznych
+    \item \pspec{Usługi firm zewnętrznych}{Informacje o zatrudnieniu firm}{Faktura}{Zatrudnione firmy wystawiają nam faktury, które są przesyłane do Obsługi wynagrodzeń}
         \begin{enumerate}
-            \item Firma sprzątająca
-            \item Firma gastronomiczna
-            \item Firma obsługująca płatności
-            \item Firma ratownicza
+            \item \pspec {Firma sprzątająca} {Zlecenie} {Faktura} {Firma świadczy usługi sprzątające}
+            \item \pspec {Firma gastronomiczna} {Zlecenie} {Faktura} {Firma świadczy usługi gastronomiczne na terenie basenu}
+            \item \pspec {Firma obsługująca płatności} {Zlecenie} {Faktura} {Firma obsługuje płatności internetowe}
+            \item \pspec {Firma ratownicza} {Zlecenie} {Faktura} {Firma dba o zachowanie standardów bezpieczeństwa na basenie}
         \end{enumerate}
-    \item Obsługa wynagrodzeń
+    \item \pspec {Obsługa wynagrodzeń} {Faktury, Informacje o zatrudnionych firmach} {Dane o wynagrodzeniach, Potwierdzenia wypłaty wynagrodzeń} {Moduł obsługuje całość wypłat wynagrodzenia}
         \begin{enumerate}
-            \item Sprawdzanie poprawności faktur
-            \item Wypłacanie należności
+            \item \pspec {Sprawdzanie poprawności faktur}{Faktury, Informacje o zatrudnionych firmach}{Informacja o płatności (do Rozliczenia podatków), Zlecenie płatności - czyli Numer rachunku i kwota (do Wypłacania należności} {Sprawdza zgodnośc informacji na fakturach wystawionych przez firmy zewnętrzne z faktycznymi informacjami o tych firmach, zapisanymi w bazie}
+            \item \pspec {Wypłacanie należności}{Zlecenie płatności, Informacje o wynagrodzeniach}{Potwierdzenie płatności, Potwierdzenia wypałaty wynagrodzeń} {Moduł obsługuje przelewy na rzecz firm zewnętrznych jak i pracowników}
                 \begin{enumerate}
-                    \item Dokonywanie przelewu
-                    \item Wypłacanie wynagrodzeń pracownikom
+                    \item \pspec {Dokonywanie przelewu} {Zlecenie płatności} {Potwierdzenie płatności} {Dokonuje przelewu i dostarcza potwierdzenie płatności}
+                    \item \pspec {Wypłacanie wynagrodzeń pracownikom} {Informacje o wynagrodzeniach} {Zlecenie płatności} {Pobiera informacje o wynagrodzeniach z bazy i na tej podstawie wysyła zlecenia płatności do Dokonywania przelewu}
                 \end{enumerate}
-            \item Rozliczanie podatków
+            \item \pspec {Rozliczanie podatków}{Informacje o płatnościach, Informacje o pracownikach i wynagrodzeniach}{Brak}{Moduł rozlicza podatki}
                 \begin{enumerate}
-                    \item Płacenie ZUS, itd.
-                    \item Płacenie podatków
+                    \item \pspec {Płacenie ZUS, itd.} {Informacje o pracownikach} {Brak} {Dla każdego pracownika na podstawie informacji o zatrudnieniu dokonuje rozliczenia wszystkich opłat}
+                    \item \pspec {Płacenie podatków} {Informacje o przychodach i wydatkach} {Brak} {Na podstawie przychodów i wydatków dokonuje rozliczenia podatków dochodowych itd.}
                 \end{enumerate}
         \end{enumerate}
 \end{enumerate}
