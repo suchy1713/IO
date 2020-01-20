@@ -36,8 +36,8 @@
 
  
 \section{Streszczenie systemu}
-Modelowany przez nas system jest systemem obsługi aquaparku. System ten posiada obsługę zawierania transakcji kupna biletu jednorazowego, oraz karnetów okresowych zarówno na miejscu, jak i on-line. Klient po założeniu konta na stronie internetowej może za jej pomocą zakupić karnet, który jest na stałe przypisany do konta. Płatność internetowa odbywa się za pomocą pośrednika oferującego system takich płatności. Na miejscu istnieje możliwość płatności kartą lub gotówką. Jednym z zadań systemu jest również obsługa księgowości, czyli między innymi wystawianie faktur dla podwykonawców (np. firma ratownicza, firma sprzątająca), rozliczanie podatku VAT.\\ \\
-System umożliwia również korzystanie z usług firmy gastronomicznej, której za pewną kwotę udostępnia się wydzielone miejsce na terenie aquaparku. Firma zapewniająca bezpieczeństwo w wodzie dostarcza wykwalifikowaną kadrę ratowniczą. W systemie instruktor prowadzi lekcje pływania dla dzieci i młodzieży oraz zajęcia aerobiku dla seniorów. Aquapark na potrzeby lekcji rezerwuje tor w basenie, na którym instruktor prowadzi zajęcia doskonalące technikę pływania, lub pojedynczy basen, w którym odbywają się zajęcia aerobiku.
+Modelowany przez nas system w całości obsługuje aquapark. Posiada on możliwość prowadzenia transakcji kupna biletu jednorazowego oraz karnetów okresowych zarówno na miejscu, jak i on-line. Klient po założeniu konta na stronie internetowej może za jej pomocą zakupić karnet, który jest na stałe przypisany do konta (karty). Płatność internetowa odbywa się za pomocą pośrednika oferującego obsługę takich płatności. Na terenie basenu, przy kasie istnieje możliwość płatności kartą lub gotówką. Jednym z zadań systemu jest również obsługa księgowości, czyli między innymi wystawianie faktur dla podwykonawców (np. firma ratownicza, firma sprzątająca), rozliczanie podatku VAT.\\ \\
+System umożliwia również korzystanie z usług firmy gastronomicznej, której za pewną kwotę udostępnia się wydzielone miejsce na terenie aquaparku. Firma zapewniająca bezpieczeństwo w wodzie dostarcza wykwalifikowaną kadrę ratowniczą. W systemie instruktor prowadzi lekcje pływania dla dzieci i młodzieży. Aquapark na potrzeby lekcji rezerwuje tor w basenie, na którym instruktor prowadzi zajęcia doskonalące technikę pływania, lub pojedynczy basen, w którym odbywają się zajęcia aerobiku. Dodatkowo możliwa jest indywidualna rezerwacja toru, za dodatkową opłatą.
 \newpage
 
 
@@ -212,7 +212,13 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
     \label{fig:level2_4_3}
     \end{figure}
     \newpage
-    
+
+\section{Diagram ERD}   
+ \begin{figure}[!htb]
+    \centerline{\includegraphics[scale=0.7]{erd.jpg}}
+    \label{fig:erd}
+    \end{figure}
+    \newpage
 
 \section{PSPEC}
 
@@ -362,6 +368,35 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
                 \end{enumerate}
         \end{enumerate}
 \end{enumerate}
+\newpage
+
+
+\section{Diagramy STD}
+\subsection{Zakladanie konta}
+    \begin{figure}[!htb]
+    \centerline{\includegraphics[scale=0.9]{zakladanie_konta.jpg}}
+    \label{fig:zakladanie_konta}
+    \end{figure}
+\newpage
+\subsection{Zakup biletu}
+    \begin{figure}[!htb]
+    \centerline{\includegraphics[scale=0.9]{zakup_biletu.jpg}}
+    \label{fig:zakup_biletu}
+    \end{figure}
+\newpage
+\subsection{Rezerwacja toru}
+    \begin{figure}[!htb]
+    \centerline{\includegraphics[scale=0.9]{rezerwacje_toru.jpg}}
+    \label{fig:rezerwacje_toru}
+    \end{figure}
+\newpage
+\subsection{Lekcje pływania}
+    \begin{figure}[!htb]
+    \centerline{\includegraphics[scale=0.9]{lekcje_plywania.jpg}}
+    \label{fig:lekcje_plywania}
+    \end{figure}
+\newpage
+
 
 \section{Słownik Danych}
 \begin{enumerate}[label= \textbf{\Alph*}]
@@ -385,8 +420,6 @@ System umożliwia również korzystanie z usług firmy gastronomicznej, której 
     Dane o wynagrodzeniach = id pracownika + kwota
     \item[]
     Dane płatnicze = numer karty + kod CVC + data wygaśnięcia
-    \item[]
-    Decyzja klienta = 
 \end{itemize}
 \item \begin{itemize} %E
     \item[]
